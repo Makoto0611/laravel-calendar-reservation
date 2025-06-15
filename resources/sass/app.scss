@@ -1,7 +1,55 @@
-// Bootstrap CSS をインポート
+// ==============================================
+// カスタム変数定義
+// ==============================================
+
+// 基本カラー変更
+$primary: #6366f1; //ナビバー、主要ボタン、リンク
+$secondary: #64748b; //サブボタン、二次的な要素
+$success: #10b981; // 成功メッセージ、確認ボタン
+
 @import 'bootstrap';
 
-// カスタムスタイル（後で使用）
-// body {
-//     font-family: 'Nunito', sans-serif;
-// }
+// ==============================================
+// カスタムスタイル
+// ==============================================
+
+// 基本的な背景設定
+body {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    min-height: 100vh;
+}
+
+// カード強化スタイル
+.card-custom {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: white;
+}
+
+.card-custom:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    background-color: white;
+}
+
+// 初期状態
+.card-slide-in {
+    opacity: 0;
+    transform: translateY(20px); // ←ここを変更
+    animation: slide-in 600ms ease forwards; // ←forwards追加
+}
+
+// アニメーション定義
+@keyframes slide-in {
+  to {
+    transform: translateY(0);    // ←ここを変更
+    opacity: 1;                  // ←透明度も追加
+  }
+}
+
+//各カードに異なる遅延時間を設定
+.col-md-4:nth-child(1) .card-slide-in { animation-delay: 0s; }    // 左：即座
+.col-md-4:nth-child(2) .card-slide-in { animation-delay: 0.3s; }  // 中：少し後
+.col-md-4:nth-child(3) .card-slide-in { animation-delay: 0.6s; }  // 右：最後
