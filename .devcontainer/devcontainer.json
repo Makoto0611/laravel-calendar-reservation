@@ -1,0 +1,28 @@
+{
+  "name": "Laravel Simple Setup",
+  "image": "mcr.microsoft.com/devcontainers/php:1-8.3-bullseye",
+  
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "18"
+    },
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": true
+    }
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "bmewburn.vscode-intelephense-client",
+        "onecentlin.laravel-blade"
+      ]
+    }
+  },
+
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y default-mysql-client redis-tools && composer install && npm install",
+
+  "forwardPorts": [8000],
+
+  "remoteUser": "vscode"
+}
