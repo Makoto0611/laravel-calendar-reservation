@@ -2,10 +2,12 @@
 // カスタム変数定義
 // ==============================================
 
-// 基本カラー変更
-$primary: #6366f1; //ナビバー、主要ボタン、リンク
-$secondary: #64748b; //サブボタン、二次的な要素
-$success: #10b981; // 成功メッセージ、確認ボタン
+// フォントシステム
+$font-family-sans-serif: 'Noto Sans JP', system-ui, sans-serif;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+$line-height-base: 1.6;
 
 @import 'bootstrap';
 
